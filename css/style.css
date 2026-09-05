@@ -212,3 +212,56 @@ button.clicked {
     transform: scale(0.90);
 }
 
+@media (max-width: 600px) {
+
+    .content {
+        position: relative;
+    }
+
+    nav {
+        width: 55px;
+        padding: 8px;
+        transition: width 0.2s ease;
+    }
+
+    nav.open {
+        width: 180px;
+    }
+
+    #menuButton {
+        width: 100%;
+        height: 40px;
+
+        padding: 0;
+        margin: 0 0 10px 0;
+
+        text-align: center;
+        font-size: 22px;
+    }
+
+    nav > h2,
+    nav > button:not(#menuButton) {
+        display: none;
+    }
+
+    nav.open > h2,
+    nav.open > button:not(#menuButton) {
+        display: block;
+    }
+
+    main {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #logo {
+        font-size: 48px;
+    }
+
+}
+
+#menuButton {
+    height: 40px;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
