@@ -23,7 +23,7 @@ signinForm.addEventListener("submit", (event) => {
     .then(data => {
         loginMessage.textContent = data;
 
-        if (data === "Login realizado!") {
+        if (data === "Login succesfull!") {
             window.location.href = "index.html";
         }
     });

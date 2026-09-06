@@ -190,15 +190,7 @@ main {
         inset 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
-#settingsWindow{
-    display: none;
-}
-
-#tasksWindow{
-    display: none;
-}
-
-#notesWindow{
+#settingsWindow, #tasksWindow, #notesWindow, #accountWindow{
     display: none;
 }
 
@@ -324,6 +316,10 @@ button.clicked {
 #taskInput:focus {
     border: 1px solid white;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+#usernameDisplay{
+    width: min-content;
 }
 
 @media (max-width: 600px) {
