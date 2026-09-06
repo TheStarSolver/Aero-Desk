@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("../img/defaultWallpaper.png");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    font-family: "Segoe UI", sans-serif;
+    cursor: url("../img/normalAero.png"), auto;
+}
+
+main {
+    width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(100, 180, 235, 0.60),
+        rgba(30, 110, 200, 0.50)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 40, 100, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    background: linear-gradient(
+        to bottom,
+        rgba(100, 180, 235, 0.60),
+        rgba(30, 110, 200, 0.50)
+    );
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 40, 100, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    outline: none;
+}
+
+button{
+    width: 100%;
+}
+
+label {
+    margin-bottom: 5px;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+.accountLink {
+    text-align: center;
+    color: white;
+}
+
+.accountLink a {
+    color: white;
+}
