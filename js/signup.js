@@ -13,7 +13,7 @@ signupForm.addEventListener("submit", (event) => {
         password: password
     };
 
-    fetch("http://localhost:3000", {
+    fetch("/", {
     method: "POST",
     body: JSON.stringify(userData)
     })

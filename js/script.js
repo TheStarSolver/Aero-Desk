@@ -1,6 +1,6 @@
 const butLogo = document.getElementById('logo');
-const logoPressSfx = new Audio("audio/logo-click-sound.mp3");
-const butPressSfx = new Audio("audio/click-sound.mp3");
+const logoPressSfx = new Audio("/audio/logo-click-sound.mp3");
+const butPressSfx = new Audio("/audio/click-sound.mp3");
 let sfxActive = true;
 
 butPressSfx.volume = 0.3;
@@ -162,7 +162,7 @@ function createTaskElement(taskData) {
 
     deleteButton.addEventListener("click", function() {
 
-    const clickSound = new Audio("audio/click-sound.mp3");
+    const clickSound = new Audio("/audio/click-sound.mp3");
     clickSound.volume = 0.5;
 
     if (sfxActive) {

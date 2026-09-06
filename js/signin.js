@@ -15,7 +15,7 @@ signinForm.addEventListener("submit", (event) => {
 
     console.log(userData);
 
-    fetch("http://localhost:3000", {
+    fetch("/", {
         method: "POST",
         body: JSON.stringify(userData)
     })
