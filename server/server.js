@@ -233,9 +233,9 @@ const server = http.createServer((req, res) => {
         let filePath;
 
         if (req.url === "/") {
-            filePath = "index.html";
+            filePath = path.join(__dirname, "..", "index.html");
         } else {
-            filePath = "." + req.url;
+            filePath = path.join(__dirname, "..", req.url);
         }
 
         fs.readFile(filePath, (err, data) => {
