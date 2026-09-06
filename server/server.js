@@ -232,22 +232,28 @@ const server = http.createServer((req, res) => {
 
         let filePath;
 
-        if (req.url === "/") {
-            filePath = path.join(__dirname, "..", "index.html");
-        } else {
-            filePath = path.join(__dirname, "..", req.url);
+    if (req.url === "/") {
+        filePath = path.join(__dirname, "..", "index.html");
+    } else {
+        filePath = path.join(__dirname, "..", req.url);
+    }
+
+    fs.readFile(filePath, (err, data) => {
+
+        if (err) {
+            res.statusCode = 404;
+            res.end("File not found!");
+            return;
         }
 
-        fs.readFile(filePath, (err, data) => {
+        const extension = path.extname(filePath);
 
-            if (err) {
-                res.statusCode = 404;
-                res.end("File not found!");
-                return;
-            }
+        if (extension === ".css") {
+            res.setHeader("Content-Type", "text/css");
+        }
 
-            res.end(data);
-        });
+        res.end(data);
+    });
 
         return;
     }
