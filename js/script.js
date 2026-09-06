@@ -114,3 +114,76 @@ const nav = document.querySelector("nav");
 menuButton.addEventListener("click", function() {
     nav.classList.toggle("open");
 });
+
+//task thingies
+
+const addTaskButton = document.getElementById("addTaskButton");
+const taskList = document.getElementById("taskList");
+const taskInput = document.getElementById("taskInput");
+
+addTaskButton.addEventListener("click", function () {
+    if (taskInput.value === "") {
+        //do not create task yea
+    } else{
+            console.log("Botão clicado!")
+        const task = document.createElement("div");
+        
+        task.classList.add("task");
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        const taskText = document.createElement("span");
+        taskText.textContent = taskInput.value;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete Task";
+        
+        taskList.appendChild(task);
+        task.appendChild(checkbox);
+        task.appendChild(taskText);
+        task.appendChild(deleteButton);
+
+        console.log(taskInput.value);
+        deleteButton.addEventListener("click", function() {
+            const clickSound = new Audio("audio/click-sound.mp3");
+            clickSound.volume = 0.5;
+
+            if (sfxActive) {
+                clickSound.play();
+            }
+
+            deleteButton.classList.add("clicked");
+
+            setTimeout(function() {
+                deleteButton.classList.remove("clicked");
+                task.remove();
+                updateTaskCounter();
+            }, 80);
+        });
+
+        checkbox.addEventListener("change", function() {
+            task.classList.toggle("completed");
+            updateTaskCounter();
+        })
+
+        //to clear input box:
+        taskInput.value = "";
+    }
+
+    updateTaskCounter();
+});
+
+
+//task counter
+const taskCounter = document.getElementById("taskCounter");
+
+
+function updateTaskCounter() {
+    const totalTasks = document.querySelectorAll(".task").length;
+    const completedTasks = document.querySelectorAll(".task.completed").length;
+
+    taskCounter.textContent = completedTasks + " / " + totalTasks;
+}
+
+updateTaskCounter();

@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyFrutigerDesk</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <h1 id="logo">AeroDesk</h1>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyFrutigerDesk</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="logo">AeroDesk</h1>
+        </header>
 
-    <div class="content">
-        <nav>
-            <button id="menuButton">☰</button>
-            <h2>Home</h2>
+        <div class="content">
+            <nav>
+                <button id="menuButton">☰</button>
+                <h2>Home</h2>
 
-            <button id="startBut">Start</button>
-            <button id="tasksBut">Tasks</button>
-            <button id="notesBut">Notes</button>
-            <button id="settingsBut">Settings</button>
-        </nav>
+                <button id="startBut">Start</button>
+                <button id="tasksBut">Tasks</button>
+                <button id="notesBut">Notes</button>
+                <button id="settingsBut">Settings</button>
+            </nav>
 
-        <main>
-            <div id="mainWindow" class="HLwindow"> <!--HL = highlight btw-->
-                <h2>Welcome to AeroDesk!</h2>
-                <p>Choose an option on the Home menu.</p>
-            </div>
+            <main>
+                <div id="mainWindow" class="HLwindow"> <!--HL = highlight btw-->
+                    <h2>Welcome to AeroDesk!</h2>
+                    <p>Choose an option on the Home menu.</p>
+                </div>
 
-            <div id="settingsWindow" class="HLwindow">
-                <h2>Settings</h2>
-                <button id="soundButton">Enable UI sounds</button>
-            </div>
+                <div id="settingsWindow" class="HLwindow">
+                    <h2>Settings</h2>
+                    <button id="soundButton">Enable UI sounds</button>
+                </div>
 
-            <div id="tasksWindow" class="HLwindow">
-                <h2>Tasks</h2>
-            </div>
+                <div id="tasksWindow" class="HLwindow">
+                    <div class="taskHeader">
+                        <h2>Tasks</h2>
+                        <span id="taskCounter">0 / 0</span>
+                    </div>
+                    <div id="taskList"> <!--task list obviously-->
 
-            <div id="notesWindow" class="HLwindow">
-                <h2>Notes</h2>
-            </div>
-        </main>
-        
+                    </div> <!--end of task list-->
 
-    </div>
-    <footer>
+                    <input type="text" id="taskInput" placeholder="Enter a task...">
 
-    </footer>
+                    <button id="addTaskButton">Add Task</button>
+                </div>
 
-    <script src="js/script.js"></script>
-</body>
+                <div id="notesWindow" class="HLwindow">
+                    <h2>Notes</h2>
+                </div>
+            </main>
+            
+
+        </div>
+        <footer>
+
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
 </html>
