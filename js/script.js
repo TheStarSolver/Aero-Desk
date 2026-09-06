@@ -121,7 +121,8 @@ const addTaskButton = document.getElementById("addTaskButton");
 const taskList = document.getElementById("taskList");
 const taskInput = document.getElementById("taskInput");
 
-addTaskButton.addEventListener("click", function () {
+
+function addTask() {
     if (taskInput.value === "") {
         //do not create task yea
     } else{
@@ -172,18 +173,39 @@ addTaskButton.addEventListener("click", function () {
     }
 
     updateTaskCounter();
+}
+
+addTaskButton.addEventListener("click", function () {
+    addTask();
+});
+
+//add also when enter is pressed
+taskInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        addTask();
+    }
 });
 
 
 //task counter
 const taskCounter = document.getElementById("taskCounter");
-
+const progressFil = document.getElementById("progressFill");
 
 function updateTaskCounter() {
     const totalTasks = document.querySelectorAll(".task").length;
     const completedTasks = document.querySelectorAll(".task.completed").length;
 
     taskCounter.textContent = completedTasks + " / " + totalTasks;
+
+    //task progress bar :)
+    let progress = 0;
+
+    if (totalTasks > 0) {
+        progress = completedTasks / totalTasks * 100;
+    }
+
+    progressFil.style.width = progress + "%"
+    console.log(progress);
 }
 
 updateTaskCounter();
